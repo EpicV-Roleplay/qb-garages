@@ -49,11 +49,10 @@
 
 
 
-FuelScript = 'LegacyFuel' -- change to lj-fuel if you use lj-fuel or something else if you use any other LegcyFuel compatible script
+FuelScript = 'lj-fuel' -- change to lj-fuel if you use lj-fuel or something else if you use any other LegcyFuel compatible script
 AutoRespawn = true --True == auto respawn cars that are outside into your garage on script restart, false == does not put them into your garage and players have to go to the impound
-SharedGarages = false   --True == Gang and job garages are shared, false == Gang and Job garages are personal
 WarpPlayerIntoVehicle = false -- True == Will Warp Player Into their vehicle after pulling it out of garage. False It will spawn on the parking lot / in front of them  (Global, can be overriden by each garage)
-HouseParkingDrawText = 'Parking' -- text when driving on to the HOUSE parking lot
+HouseParkingDrawText = 'Parken' -- text when driving on to the HOUSE parking lot
 ParkingDistance = 2.0 -- Distance to the parking lot when trying to park the vehicle  (Global, can be overriden by each garage)
 SpawnDistance = 4.5 -- The maximum distance you can be from a parking spot, to spawn a car (Global, can be overriden by each garage)
 DepotPrice = 60.0 -- The price to take out a despawned vehicle from impound.
@@ -88,7 +87,7 @@ VehicleHeading = 'driverside' -- only used when NO parking spots are defined in 
 ]]
 
 SharedJobGarages = { -- define the job garages which are shared
-    --'pdgarage',
+    'vanilla',
 }
 
 Garages = {
@@ -119,7 +118,7 @@ Garages = {
         label = 'Pillbox Lower Parking',
         showBlip = true,
         blipcoords = vector3(341.7, -623.33, 29.29),
-        blipName = 'Public Parking',
+        blipName = 'Pillbox Lower Parking',
         blipNumber = 357,
         type = 'public',
         vehicleCategories = {'car', 'motorcycle', 'other'},
@@ -996,7 +995,7 @@ Garages = {
         drawText = 'Parking',                 --car, air, sea
         debug = false
     },
-    ['pillboxgarage'] = {
+    ['legionsquare'] = {
         ['Zone'] = {
             ['Shape'] = { --polygon that surrounds the parking area
                 vector2(239.88751220703, -820.52038574219),
@@ -1006,10 +1005,10 @@ Garages = {
                 vector2(218.69738769531, -754.69787597656),
                 vector2(200.07238769531, -805.74285888672)
             },
-            ['minZ'] = 30.07,  -- min height of the parking zone
+            ['minZ'] = 29.07,  -- min height of the parking zone
             ['maxZ'] = 40.0,  -- max height of the parking zone
         },
-        label = "Pillbox Garage Parking",
+        label = "Legion Square Parking",
         showBlip = true,
         blipcoords = vector3(215.9499, -809.698, 30.731),
         blipName = "Public Parking",
@@ -1431,6 +1430,36 @@ Garages = {
             vector4(425.68, -978.88, 25.21, 269.76),
             vector4(425.68, -976.24, 25.21, 270.49),
             vector4(442.0, -981.58, 25.21, 90.19),
+        },
+        debug = false
+    },
+    ['vanilla'] = {
+        ['Zone'] = {
+            ['Shape'] = { --polygon that surrounds the parking area
+            vector2(144.14263916016, -1292.5166015625),
+            vector2(149.20697021484, -1289.9586181641),
+            vector2(157.11656188965, -1280.7481689453),
+            vector2(146.7947845459, -1263.8560791016),
+            vector2(143.67300415039, -1260.6486816406),
+            vector2(130.69862365723, -1268.1744384766),
+            vector2(143.39891052246, -1291.1354980469),
+            },
+            ['minZ'] = 28.23,  -- min height of the parking zone
+            ['maxZ'] = 30.38,  -- max height of the parking zone
+        },
+        label = 'Vanilla Unicorn Garage',
+        type = 'job',
+        job = "vanilla",
+        vehicleCategories = {'car', 'motorcycle', 'other'},
+        drawText = 'Vanilla Unicorn Garage',
+        ["ParkingSpots"] = {
+            vector4(145.46, -1287.43, 29.04, 119.57),
+            vector4(143.86, -1285.11, 29.04, 120.3),
+            vector4(142.35, -1282.64, 29.05, 120.73),
+            vector4(140.57, -1279.83, 29.05, 119.41),
+            vector4(140.57, -1279.83, 29.05, 119.41),
+            vector4(138.37, -1275.38, 29.03, 114.76),
+            vector4(141.6, -1269.21, 28.89, 199.7),
         },
         debug = false
     },
