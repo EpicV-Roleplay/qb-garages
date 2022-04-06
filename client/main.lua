@@ -273,7 +273,7 @@ local function AddRadialParkingOption()
     if IsPedInAnyVehicle(Player) then
         MenuItemId = exports['qb-radialmenu']:AddOption({
             id = 'put_up_vehicle',
-            title = 'Park Vehicle',
+            title = 'Parken',
             icon = 'parking',
             type = 'client',
             event = 'qb-garages:client:ParkVehicle',
@@ -282,7 +282,7 @@ local function AddRadialParkingOption()
     else
         MenuItemId = exports['qb-radialmenu']:AddOption({
             id = 'open_garage_menu',
-            title = 'Open Garage',
+            title = 'Garage',
             icon = 'warehouse',
             type = 'client',
             event = 'qb-garages:client:OpenMenu',
@@ -294,7 +294,7 @@ end
 local function AddRadialImpoundOption()
     MenuItemId = exports['qb-radialmenu']:AddOption({
         id = 'open_garage_menu',
-        title = 'Open Impound Lot',
+        title = 'Abschlepphof',
         icon = 'warehouse',
         type = 'client',
         event = 'qb-garages:client:OpenMenu',
@@ -561,7 +561,7 @@ RegisterNetEvent('qb-garages:client:TakeOutGarage', function(data, cb)
                 TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
             end
             TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(veh))
-            SetVehicleEngineOn(veh, true, true)
+            SetVehicleEngineOn(veh, false, false)
         end, vehicle.plate)
 
     end, location, true)
@@ -658,7 +658,7 @@ CreateThread(function()
             local blipColor = garage.blipColor ~= nil and garage.blipColor or 3
             SetBlipSprite(Garage, garage.blipNumber)
             SetBlipDisplay(Garage, 4)
-            SetBlipScale(Garage, 0.60)
+            SetBlipScale(Garage, 0.5)
             SetBlipAsShortRange(Garage, true)
             SetBlipColour(Garage, blipColor)
             BeginTextCommandSetBlipName("STRING")
