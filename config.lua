@@ -90,8 +90,9 @@ SharedJobGarages = { -- define the job garages which are shared
     'vanilla',
     'tuner',
     'narcos',
-    'police',
+    'pdgarage',
     'ambulance',
+    'vagos',
 }
 
 Garages = {
@@ -1464,6 +1465,33 @@ Garages = {
         },
         debug = false
     },
+    ['vagos'] = {
+        ['Zone'] = {
+            ['Shape'] = { --polygon that surrounds the parking area
+            vector2(-1108.1553955078, -1570.9437255859),
+            vector2(-1116.6549072266, -1554.4215087891),
+            vector2(-1163.2493896484, -1587.8153076172),
+            vector2(-1152.7366943359, -1604.716796875),
+            vector2(-1133.8796386719, -1591.5274658203),
+            vector2(-1126.9066162109, -1587.4434814453),
+            },
+            ['minZ'] = 4.3559536933899-1,  -- min height of the parking zone
+            ['maxZ'] = 5.0818557739258+1,  -- max height of the parking zone
+        },
+        label = 'Vagos',
+        type = 'gang',
+        job = "vagos",
+        vehicleCategories = {'car', 'motorcycle', 'other'},
+        drawText = 'Vagos',
+        ["ParkingSpots"] = {
+            vector4(-1147.29, -1580.18, 3.65, 303.7),
+            vector4(-1140.95, -1575.78, 3.65, 304.15),
+            vector4(-1133.95, -1570.92, 3.65, 305.89),
+            vector4(-1122.06, -1562.83, 3.84, 304.5),
+            vector4(-1117.0, -1559.3, 3.64, 305.28),
+        },
+        debug = false
+    },
     ['helipad'] = {
         ['Zone'] = {
             ['Shape'] = { --polygon that surrounds the parking area
@@ -1560,6 +1588,45 @@ Garages = {
             vector4(-1280.83, -3395.7, 14.54, 330.47),
 
         },
+    },
+    ['pdgarage'] = {
+        ['Zone'] = {
+            ['Shape'] = { --polygon that surrounds the parking area
+            vector2(423.15768432618, -1000.2858886718),
+            vector2(423.15740966796, -973.041015625),
+            vector2(459.71978759766, -973.04022216796),
+            vector2(461.55606079102, -998.62860107422),
+            },
+            ['minZ'] = 24.0,  -- min height of the parking zone
+            ['maxZ'] = 27.0,  -- max height of the parking zone
+        },
+        label = 'MRPD Garage',
+        type = 'job',
+        job = "police",
+        vehicleCategories = {'emergency'},
+        drawText = 'MRPD Garage',
+        ["ParkingSpots"] = {
+            vector4(445.67, -997.0, 24.81, 269.98),
+            vector4(445.83, -994.31, 25.21, 267.42),
+            vector4(445.53, -991.53, 25.21, 269.55),
+            vector4(445.51, -988.84, 25.21, 269.43),
+            vector4(445.55, -986.12, 25.21, 270.71),
+            vector4(437.35, -986.1, 25.21, 89.31),
+            vector4(437.27, -988.86, 25.21, 90.05),
+            vector4(437.32, -991.57, 25.21, 90.47),
+            vector4(437.3, -994.26, 25.21, 90.38),
+            vector4(437.31, -996.97, 25.21, 90.1),
+            vector4(425.76, -997.07, 25.21, 270.57),
+            vector4(425.72, -994.41, 25.21, 269.31),
+            vector4(425.72, -991.68, 25.21, 269.53),
+            vector4(425.69, -989.03, 25.21, 270.22),
+            vector4(425.69, -984.26, 25.21, 269.65),
+            vector4(425.67, -981.55, 25.21, 269.33),
+            vector4(425.68, -978.88, 25.21, 269.76),
+            vector4(425.68, -976.24, 25.21, 270.49),
+            vector4(442.0, -981.58, 25.21, 90.19),
+        },
+        debug = false
     },
     ['boathouse1'] = {
         ['Zone'] = {
