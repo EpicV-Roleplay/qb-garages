@@ -921,7 +921,7 @@ Garages = {
                 vector2(1133.7532958984, 2658.8393554688),
                 vector2(1140.4176025391, 2658.8898925781)
             },
-            ['minZ'] = 37.78,  -- min height of the parking zone
+            ['minZ'] = 36.78,  -- min height of the parking zone
             ['maxZ'] = 39.74,  -- max height of the parking zone
         },
         label = "The Motor Hotel Parking",
@@ -1127,7 +1127,7 @@ Garages = {
         },
         label = "Impound Lot",
         showBlip = true,
-        blipcoords = vector3(-143.15, -1175.06, 23.77),
+        blipcoords = vector3(409.58, -1635.64, 29.29),
         blipName = "Impound Lot",
         blipNumber = 68,
         type = 'depot',                --public, job, gang, depot
